@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Game</title>
+    <style>
+        button {
+            width: 80px;
+            height: 80px;
+            font-size: 1.2em;
+            margin: 5px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        const buttons = Array.from({length: 64}, (_, index) => index + 1);
+
+        for (let i = buttons.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [buttons[i], buttons[j]] = [buttons[j], buttons[i]];
+        }
+
+        let currentIndex = 1;
+
+        function handleClick(buttonIndex) {
+            const currentButton = $(`#button_${buttonIndex}`);
+            if (buttonIndex === currentIndex) {
+                const placeholder = $('<div class="placeholder " style="width: 80px;height: 80px;display: inline-block "></div>');
+                $(`#button_${currentIndex}`).after(placeholder);
+                currentButton.remove();
+                currentIndex++;
+
+                if (currentIndex - 1 === buttons.length) {
+                    alert('Chúc mừng! Bạn đã hoàn thành trò chơi!');
+                }
+            } else {
+                console.log(buttonIndex);
+                console.log(currentIndex);
+
+                alert('Bạn đã nhấn sai. Hãy thử lại!');
+            }
+        }
+
+        buttons.forEach(buttonIndex => {
+            const button = $(`<button id="button_${buttonIndex}">${buttonIndex}</button>`);
+            button.click(() => handleClick(buttonIndex));
+            $('body').append(button);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình tính phương trình bậc 2</title>
+</head>
+<body>
+    <div class="container">
+
+            <h1>Giải phương trình bậc II</h1>
+            <label for="a">Nhập giá trị a:</label>
+            <input type="number" id="a" placeholder="Nhập a" required><br>
+
+            <label for="b">Nhập giá trị b:</label>
+            <input type="number" id="b" placeholder="Nhập b" required><br>
+
+            <label for="c">Nhập giá trị c:</label>
+            <input type="number" id="c" placeholder="Nhập c" required><br>
+
+            <button onclick="quadratic()">Giải phương trình</button>
+            <div id="result"></div>
+    </div>
+</body>
+<script>
+
+    function quadratic() {
+        let a = document.getElementById('a').value;
+        let b = document.getElementById('b').value;
+        let c = document.getElementById('c').value;
+        if (a == 0) {
+            document.getElementById('result').innerHTML = "Phương trình có nghiệm duy nhất x = " + (-c/b);
+            return;
+        }
+
+        let delta = b*b - 4*a*c;
+        if (delta < 0) {
+            document.getElementById('result').innerHTML =  "Phương trình vô nghiệm";
+        } else if (delta == 0) {
+            document.getElementById('result').innerHTML = "Phương trình có nghiệm kép x1 = x2 = " + (-b/(2*a));
+        } else {
+            document.getElementById('result').innerHTML = "Phương trình có 2 nghiệm phân biệt x1 = " + ((-b + Math.sqrt(delta))/(2*a)) + " và x2 = " + ((-b - Math.sqrt(delta))/(2*a));
+        }
+    }
+
+</script>
+</html>

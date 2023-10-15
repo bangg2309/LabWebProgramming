@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="rotate">
+      <img src="img/img.png" alt="" style="width: 400px;height: 400px; display: flex; margin: 200px auto auto;">
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    let cout = 15;
+    function rotate(){
+        $('#rotate').animate({rotate: cout+'deg'}, 1000);
+        cout+= 15;
+    }
+    setInterval(rotate, 2000);
+</script>
+</html>

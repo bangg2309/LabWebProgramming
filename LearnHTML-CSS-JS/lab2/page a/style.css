@@ -1,0 +1,142 @@
+/*Reset CSS*/
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+/*Start Header*/
+.header_style .sixteen.columns{
+  display: flex;
+  justify-content: space-around;
+  background-color: #eeeeee;
+  padding:10px 0px 20px 0px;
+}
+.htext_style{
+  position: relative;
+  top: 5px;
+}
+.two-thirds{
+  display: flex;
+  flex-flow: row-reverse;
+}
+.two-thirds .slow_fade{
+  padding-right: 5px;
+}
+.htext_style{
+  padding-right: 20px;
+}
+/*End Header*/
+/*Start Content1*/
+#section_normal_4_2 .sixteen.columns{
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: #222222;
+}
+.eight.columns.omega{
+  width: 400px;
+}
+.bold_text.blue_text.editContent{
+  color: deepskyblue;
+  font-weight: bold;
+  line-height: 30px;
+}
+.big_title.bold_text.editContent{
+  font-weight: bold;
+  color: white;
+  font-size: 40px;
+}
+.pix_button{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background: darkturquoise;
+  padding: 10px;
+  line-height: 5;
+}
+.img_style{
+  padding-right: 40px;
+}
+/*Star Content2*/
+#section_normal_6{
+  background-color: #eeeeee;
+  height: 200px;
+}
+.envato_unbounce .container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.L1_style, .L2_style{
+  display: flex;
+  justify-content: center;
+}
+.L1_style .pix_text{
+  color: rgba(69,67,67,0.8);
+}
+.box_1, .box_2{
+  display: grid;
+  grid-template-columns: 80px 400px;
+  grid-template-rows: 80px;
+  height: 80px;
+
+
+}
+.box_1{
+  padding-left: 200px;
+}
+.b_style{
+  background-color: #F5F5F5;
+}
+.logo_style{
+  margin-top: 10px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.stbox{
+  float: left;
+  padding: 20px ;
+  font-size: 13px;
+}
+.txt_style{
+  background-color: white;
+  height: 80px;
+}
+/*Star Content3*/
+.container .center_text{
+  text-align: center;
+  padding-top: 20px;
+}
+.f2_style, .f1_style{
+  margin-bottom: 20px;
+}
+.second_link{
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.get_2_btn .slow_fade{
+  text-decoration: none;
+  color: #04AA6D;
+  font-weight: bold;
+  border: 2px solid #04AA6D;
+  padding: 20px;
+}
+/*Start Footer*/
+.rights_st{
+  margin-top: 60px;
+}
+.editContent{
+  color: gray;
+}
+.pixfort_st{
+  color: #04AA6D;
+  font-weight: bold;
+}
+.f1_style .editContent{
+  color: #04AA6D;
+  font-size: x-large;
+}
+.env_st{
+  position: relative;
+  bottom: 5px;
+  color: blue;
+}

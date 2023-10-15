@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bai1.css">
+</head>
+<body id="body">
+<div class="container" id="container">
+    <div class="button btn-green" id="green" onclick = displayColor('#4CAF50')>Green</div>
+    <div class="button btn-blue" id="blue" onclick = displayColor('#008CBA')>Blue</div>
+    <div class="button btn-red" id="red" onclick = displayColor('#f44336')>Red</div>
+    <div class="button btn-gray" id="gray" onclick = displayColor('#e7e7e7')>Gray</div>
+    <div class="button btn-black" id="black" onclick = displayColor('#555555')>Black</div>
+</div>
+</body>
+<script>
+
+    function displayColor(color) {
+        document.body.style.backgroundColor = color;
+    }
+</script>
+</html>

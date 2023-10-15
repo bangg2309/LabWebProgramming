@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="greeting"></div>
+</body>
+<script>
+  let random = Math.floor(Math.random() * 6);
+    let greeting = "";
+    switch (random) {
+        case 0:
+            greeting = "Hello";
+            break;
+        case 1:
+            greeting = "Xin chào";
+            break;
+        case 2:
+            greeting = "Bạn khỏe không?";
+            break;
+        case 3:
+            greeting = "Chúc bạn một ngày tốt lành";
+            break;
+        case 4:
+            greeting = "Good day";
+            break;
+        case 5:
+            greeting = "Chúc bạn một ngày tuyệt vời";
+            break;
+    }
+    document.getElementById('greeting').innerHTML = greeting;
+</script>
+</html>

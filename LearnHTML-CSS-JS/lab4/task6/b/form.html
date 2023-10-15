@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+<div class="form-container">
+    <form action="" class="form-submit">
+        <div class="row title">
+          <span class="contact">
+              Contact Us
+          </span>
+        </div>
+        <div class="row item">
+            <label for="fullname">FULL NAME</label>
+            <input type="text" id="fullname" placeholder="Enter Your Name" required>
+            <div class="error" id="error-fullname" style="color: red"></div>
+        </div>
+        <div class="row col-6">
+            <div class="col-left item">
+                <label for="email">EMAIL</label>
+                <input type="text" id="email" placeholder="Enter Your EMAIL" required>
+                <div class="error" id="error-email" style="color: red"></div>
+            </div>
+            <div class="col-right item">
+                <label for="phone">PHONE</label>
+                <input type="text" id="phone" placeholder="Enter Number Phone" required>
+                <div class="error" id="error-phone" style="color: red"></div>
+            </div>
+        </div>
+        <div class="row item">
+            <label for="choose">NEEDED SERVICES</label>
+            <select id="choose" >
+                <option value="" disabled selected>Please Chooses</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Us">USA</option>
+                <option value="En">England</option>
+            </select>
+            <div class="error" id="error-choose" style="color: red"></div>
+        </div>
+        <div class="row content-message item">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" rows="5" placeholder="Your message here..." required></textarea>
+            <div class="error" id="error-message" style="color: red"></div>
+        </div>
+        <div class="row btn-submit">
+            <button type="button" class="btn" id="submitBtn">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+<script>
+    $(document).ready(function() {
+        function validateForm() {
+            // Reset previous error messages
+            $('.error').text('');
+
+            // Validate Full Name
+            const fullName = $('#fullname').val().trim();
+            if (fullName === '') {
+                $('#error-fullname').text('Please enter your full name');
+            }
+
+            // Validate Email
+            const email = $('#email').val().trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '' || !emailRegex.test(email)) {
+                $('#error-email').text('Please enter a valid email address');
+            }
+
+            // Validate Phone
+            const phone = $('#phone').val().trim();
+            const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+            if (phone === '' || !phoneRegex.test(phone)) {
+                $('#error-phone').text('Please enter a valid phone number');
+            }
+
+            // Validate Needed Services
+            const choose = $('#choose').val();
+            if (choose === null) {
+                $('#error-choose').text('Please choose a service');
+            }
+
+            const message = $('#message').val().trim();
+            if (message === '') {
+                $('#error-message').text('Please enter your message');
+            }
+
+            if ($('.error').text() !== '') {
+                return false;
+            }
+            return true;
+        }
+        $('#submitBtn').click(validateForm);
+    });
+</script>
+
+
+</html>
